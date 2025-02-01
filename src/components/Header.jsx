@@ -1,6 +1,6 @@
 import { SignedIn, SignedOut, SignIn, SignUp, UserButton, } from '@clerk/clerk-react'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { Button } from './ui/button'
 import { PenBox } from 'lucide-react'
 
@@ -8,11 +8,23 @@ function Header() {
   const [showSignIn, setshowSignIn] = useState(false)  // For SignIn
   const [showSignUp, setshowSignUp] = useState(false)  // For SignUp
 
+  //For If User Not SignIn
+  const [search, setsearch] = useSearchParams()
+
+  //For If USer Not SignIn and after search parm change
+  useEffect (()=>{
+      if (search.get ('sign-in')){
+        setshowSignIn(true);
+      } 
+    } , [search]
+  )
+
   //  Function for When We Click Outside Of Clerck Div it will Disapear
   const HandleOverlayClick = (e)=>{
       if (e.target === e.currentTarget){
         setshowSignIn(false);
         setshowSignUp(false);
+        setsearch({});
       }
   }
 
@@ -44,7 +56,6 @@ function Header() {
             <UserButton />
           </SignedIn>
         </div>
-        
           {/* JS FOr Condition SignIn and SignUp */}
         {
           showSignIn && <div onClick={HandleOverlayClick}
