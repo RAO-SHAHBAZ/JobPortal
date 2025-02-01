@@ -2,7 +2,7 @@ import { SignedIn, SignedOut, SignIn, SignUp, UserButton, } from '@clerk/clerk-r
 import React, { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Button } from './ui/button'
-import { PenBox } from 'lucide-react'
+import { BriefcaseBusiness, Heart, PenBox } from 'lucide-react'
 
 function Header() {
   const [showSignIn, setshowSignIn] = useState(false)  // For SignIn
@@ -53,7 +53,29 @@ function Header() {
                 Post a Job
               </Button>
             </Link>
-            <UserButton />
+            <UserButton 
+            // For Change Avatar of UserButton //Speacil Clerk Function
+            appearance={{
+              elements:{
+                avatarBox: "w-10 h-10",
+              }
+            }}
+            >
+              {/* Additional Buttons In Clerk wit Links */}
+              <UserButton.MenuItems>
+                  <UserButton.Link 
+                  label='My Jobs'
+                  labelIcon = {<BriefcaseBusiness size={15} />}
+                  href='/my-jobs'
+                  />
+                  <UserButton.Link 
+                  label='Saved Jobs'
+                  labelIcon = {<Heart size={15} />}
+                  href='/saved-jobs'
+                  />
+              </UserButton.MenuItems>
+
+            </UserButton>
           </SignedIn>
         </div>
           {/* JS FOr Condition SignIn and SignUp */}
