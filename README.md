@@ -1,9 +1,8 @@
 React + VITE + Chadcn Ui + Clerk + Supabase
-<br/><br/>
+<hr/>
 
 These Commands I uses In this App
-<br/><br/>
-
+<hr/>
 npm create vite@latest<br/>
 npm install <br/>
 npm i react-router-dom <br/>
@@ -14,5 +13,5 @@ npm install @supabase/supabase-js <br/>
 npm install @clerk/themes <br/>
 npm i embla-carousel-autoplay <br/>
 npm i react-spinners  <br/>
-<br/><br/>
+<hr/> 
 .ene File is Must create in your Root Section
