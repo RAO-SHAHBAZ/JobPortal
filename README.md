@@ -1,8 +1,12 @@
-# React + Vite
+React + VITE + Chadcn Ui + Clerk + Supabase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+These Commands I uses In this App
 
-Currently, two official plugins are available:
+npx shadcn@latest add accordion carousel card drawer input label radio-group select textarea
+npm i react-router-dom
+npm install @supabase/supabase-js
+npm install @clerk/themes
+npm i embla-carousel-autoplay
+npm i react-spinners 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+.ene File is Must create in your Root Section
