@@ -93,7 +93,10 @@ function Header() {
         {
           showSignUp && <div onClick={HandleOverlayClick}
           className='absolute top-0 left-0 h-screen w-full bg-black bg-opacity-50 flex justify-center items-center'>
-            <SignUp />
+            <SignUp
+              signUpForceRedirectUrl='/onboarding'
+              fallbackRedirectUrl='/onboarding'
+            />
           </div>
         }
 
