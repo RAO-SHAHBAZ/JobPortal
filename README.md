@@ -1,7 +1,13 @@
 React + VITE + Chadcn Ui + Clerk + Supabase
 <br/><br/>
+
 These Commands I uses In this App
 <br/><br/>
+
+npm create vite@latest<br/>
+npm install <br/>
+npm i react-router-dom <br/>
+npm i react-router-dom <br/>
 npx shadcn@latest add accordion carousel card drawer input label radio-group select textarea  <br/>
 npm i react-router-dom <br/>
 npm install @supabase/supabase-js <br/>
