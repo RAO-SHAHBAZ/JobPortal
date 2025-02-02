@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, SignIn, SignUp, UserButton, } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignIn, SignUp, UserButton, useUser, } from '@clerk/clerk-react'
 import React, { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Button } from './ui/button'
@@ -7,6 +7,8 @@ import { BriefcaseBusiness, Heart, PenBox } from 'lucide-react'
 function Header() {
   const [showSignIn, setshowSignIn] = useState(false)  // For SignIn
   const [showSignUp, setshowSignUp] = useState(false)  // For SignUp
+
+  const {user} = useUser();   // For If user is Reqrutir only on then show him to post Job Button
 
   //For If User Not SignIn
   const [search, setsearch] = useSearchParams()
@@ -46,13 +48,13 @@ function Header() {
             </Button>
           </SignedOut>
           <SignedIn>
-            {/* Add a Condition Here */}
-            <Link to='/post-job'>
+            {/* For If user is Reqrutir only on then show him to post Job Button */}
+            {user?.unsafeMetadata?.role === "recruiter" && (<Link to='/post-job'>
               <Button variant="destructive" className='rounded-full'>
                 <PenBox size={20} className='mr-2' />
                 Post a Job
               </Button>
-            </Link>
+            </Link>)}
             <UserButton 
             // For Change Avatar of UserButton //Speacil Clerk Function
             appearance={{
