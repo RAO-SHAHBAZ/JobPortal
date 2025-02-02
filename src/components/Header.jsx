@@ -32,7 +32,7 @@ function Header() {
     <>
       <nav className='flex justify-between items-center py-4 px-8'>
         {/* For Logo */}
-        <Link>
+        <Link to='/' >
           <img src="/logo.png" alt="logo" className='h-20' />
         </Link>
         {/* FOr SignIn and Signout */}

@@ -12,6 +12,8 @@ function ProtectedRoute({children}) {
         return <Navigate to='/?sign-in=true' />
     }
 
+    // checking onbording statues
+
   return children;
 };
 
